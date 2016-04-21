@@ -12,5 +12,5 @@ class easeSpider(scrapy.Spider):
 	def parse(self,respones):
 		for sel in respones.xpath('//*[@id="goodsList"]/li'):
 			name = sel.xpath('div/p/a/@title').extract()
-			print(chr(name[0]))
+			print(name[0])
 			
