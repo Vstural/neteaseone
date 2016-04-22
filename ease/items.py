@@ -11,7 +11,7 @@ import scrapy
 class EaseItem(scrapy.Item):
     # define the fields for your item here like:
     # name = scrapy.Field()
-    images = scrapy.Field()
+    goods_pic_url = scrapy.Field()
+    intro_pic_urls = scrapy.Field()
     item_name = scrapy.Field()
     file_id = scrapy.Field()
-    
