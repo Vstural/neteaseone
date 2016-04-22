@@ -20,9 +20,9 @@ class easeSpider(scrapy.Spider):
 			file_id = re_digital.findall(next_url)[0]
 
 			item_name = sel.xpath('div/p/a/@title').extract()[0]			
-			goods_pic_url = sel.xpath('//*[@id="goodsList"]/li[1]/div/div[1]/a/img').extract()
+			goods_pic_url = sel.xpath('div/div/a/img/@data-src').extract()[0]
 			next_url = "http://1.163.com" + next_url
-			
+
 			item = EaseItem()
 			item['file_id'] = file_id
 			item['item_name'] = item_name
@@ -35,6 +35,7 @@ class easeSpider(scrapy.Spider):
 
 	def parse_intro(self,respones):
 		item = respones.meta['item']
-		print item['item_name']
+		# //*[@id="introPanel"]/img/@data-src
+		# print item['item_name']
 		# print respones.url
 		yield item
