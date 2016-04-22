@@ -9,8 +9,8 @@
 class EasePipeline(object):
     def process_item(self, item, spider):
     	print "*************************"
-    	print item['goods_pic_url']
-    	# print item['intro_pic_urls']
+    	print item['goods_pic_url'].decode()
+    	print item['intro_pic_urls']
     	print item[u'item_name']
     	print item['file_id']
     	print "*************************"

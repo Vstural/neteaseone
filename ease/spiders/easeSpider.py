@@ -36,6 +36,9 @@ class easeSpider(scrapy.Spider):
 	def parse_intro(self,respones):
 		item = respones.meta['item']
 		# //*[@id="introPanel"]/img/@data-src
-		# print item['item_name']
-		# print respones.url
+		item['intro_pic_urls'] = \
+		respones.xpath('//*[@id="introPanel"]/img/@data-src').extract()
+		# for pic in respones.xpath("[@id="introPanel"]/img/@data-src"):
+			# temp.append(pic[0])
+
 		yield item
