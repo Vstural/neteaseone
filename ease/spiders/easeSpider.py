@@ -14,9 +14,9 @@ class easeSpider(scrapy.Spider):
 
 	def parse(self,respones):
 		for sel in respones.xpath('//*[@id="goodsList"]/li'):
-			file_id = sel.xpath('div/p/a/@href').extract()[0]
+			next_url = sel.xpath('div/p/a/@href').extract()[0]
 			re_digital = re.compile(r"\d+")
-			file_id = re_digital.findall(file_id)[0]
+			file_id = re_digital.findall(next_url)[0]
 
 			item_name = sel.xpath('div/p/a/@title').extract()[0]			
 			# images = sel.xpath('div/p/a/@title').extract()
