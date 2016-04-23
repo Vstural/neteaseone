@@ -8,7 +8,9 @@ class easeSpider(scrapy.Spider):
 	"1.163.com",
 	]
 	start_urls = [
-	"http://1.163.com/list.html",
+	# "http://1.163.com/list.html",
+	"http://1.163.com/list/0-0-1-%s.html" % p for p in xrange(3,10)
+	# "http://1.163.com/list/0-0-1-3.html",
 	# "http://1.163.com/detail/148.html"
 	]
 
