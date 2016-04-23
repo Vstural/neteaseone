@@ -31,6 +31,11 @@ class easeSpider(scrapy.Spider):
 			request = scrapy.Request(next_url,callback=self.parse_intro)
 			request.meta['item'] = item
 
+			total_need = sel.xpath('div/p[2]/text()').extract()[0]
+			item['total_need'] = total_need
+			# total need
+			# //*[@id="goodsList"]/li[2]/div/p[2] 
+
 			yield request
 
 	def parse_intro(self,respones):

@@ -15,3 +15,5 @@ class EaseItem(scrapy.Item):
     intro_pic_urls = scrapy.Field()
     item_name = scrapy.Field()
     file_id = scrapy.Field()
+    total_need = scrapy.Field()
+    
